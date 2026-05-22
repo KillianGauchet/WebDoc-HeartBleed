@@ -1,0 +1,83 @@
+Tu es un expert en vulgarisation numérique. Tu vas réécrire des textes d'un webdoc sur la faille Heartbleed pour les rendre compréhensibles par le grand public : ados de 15 ans, parents non-technophiles, retraités curieux.
+
+RÈGLES ABSOLUES :
+- Zéro jargon sans explication immédiate entre parenthèses
+- Chaque concept abstrait = une analogie du quotidien (cuisine, courrier, maison, corps humain)
+- Répondre toujours à la question implicite "et moi là-dedans ?"
+- Ton : série documentaire Netflix — engageant, humain, jamais condescendant
+- Ne pas raccourcir : enrichir et clarifier
+
+---
+
+SECTION 1 — Page "Le Bug Heartbeat" (composant TheFlaw)
+
+Texte actuel :
+"En 2012, une nouvelle fonction appelée 'Heartbeat' est ajoutée. C'est un simple signal pour vérifier que la connexion est toujours active. Un peu comme si votre ordinateur demandait au serveur : 'Tu es là ? Répète-moi ce mot de 5 lettres.'"
+
+Problème : le concept de "connexion active" et de "signal" est flou pour un non-initié.
+
+Texte actuel (carte danger) :
+"Imaginez demander à un serveur de répéter un mot de 5 lettres, mais de lui mentir en disant qu'il en fait 60 000. Le serveur, trop naïf, va vous répéter votre mot... puis vider tout le reste de sa mémoire vive (RAM) pour atteindre les 60 000 lettres demandées."
+
+Problème : "mémoire vive (RAM)" et "60 000 lettres" restent abstraits sans ancrage visuel.
+
+→ Réécris ces deux blocs en gardant la même structure (intro + carte danger). Rends la métaphore physique et mémorable. Explique pourquoi c'est grave pour MOI personnellement.
+
+---
+
+SECTION 2 — Page "Le Lab du Hackeur" (composant HackerPage)
+
+Texte actuel :
+"À quel point est-il facile de voler un secret ? Prenez les commandes et découvrez comment une simple ligne de code permet de s'infiltrer dans la vie privée de millions d'utilisateurs."
+
+Texte actuel dans le terminal (commandes) :
+- "scan" → "OpenSSL 1.0.1f found. Heartbeat extension: ENABLED"
+- "exploit" → "Payload: 'PING' (Size claimed: 65535)"
+
+Problème : "OpenSSL 1.0.1f", "Heartbeat extension: ENABLED", "Payload", "Size claimed: 65535" sont illisibles pour un non-développeur.
+
+→ Réécris le texte d'intro de la page pour donner envie d'interagir avec le terminal sans avoir peur. Propose aussi des versions des messages du terminal avec une traduction entre parenthèses en temps réel pour chaque ligne technique. Exemple : "OpenSSL 1.0.1f trouvé (= le verrou de sécurité du serveur est une vieille version)".
+
+---
+
+SECTION 3 — Page "Autres Failles" (composant OtherFlaws)
+
+Textes actuels :
+- Log4Shell 2021 : "Faille dans une bibliothèque Java utilisée partout."
+- Shellshock 2014 : "Faille dans le terminal Bash (Linux/Mac)."
+- EternalBlue 2017 : "Utilisée par WannaCry pour paralyser le monde."
+
+Problème : "bibliothèque Java", "terminal Bash", "WannaCry" n'évoquent rien pour un non-initié.
+
+→ Réécris chaque description en 2 phrases max : la première avec une analogie du quotidien, la seconde avec l'impact humain concret ("des hôpitaux bloqués", "des entreprises rançonnées"...).
+
+---
+
+SECTION 4 — Quiz, Question 7
+
+Texte actuel :
+Question : "Qu'est-ce qu'un 'buffer over-read' ?"
+Explication : "C'est quand un programme lit plus de données qu'il ne devrait dans la mémoire RAM, accédant ainsi à des informations secrètes stockées juste à côté."
+
+→ Réécris la question pour qu'elle soit compréhensible sans connaître le terme, et réécris l'explication avec une analogie physique. Conserve les 4 options de réponse actuelles.
+
+---
+
+SECTION 5 — Quiz, Question 8
+
+Texte actuel :
+Question : "Combien de dons OpenSSL recevait-il par an avant la faille ?"
+Explication : "Le projet était géré par des bénévoles avec seulement 2 000 € de donations annuelles, malgré son importance vitale pour Internet."
+
+Problème : sans contexte, 2 000 € n'est pas parlant.
+
+→ Réécris l'explication en ajoutant une comparaison choc : combien gagne un développeur moyen, quel budget une grande entreprise comme Google dépense en sécurité, etc. Rends l'absurdité de cette situation viscéralement compréhensible.
+
+---
+
+FORMAT DE RÉPONSE ATTENDU :
+Pour chaque section, donne :
+[SECTION X — Nom de la page]
+AVANT : (texte original)
+APRÈS : (ta réécriture)
+NOTE : (1 ligne expliquant ce que tu as changé et pourquoi)
