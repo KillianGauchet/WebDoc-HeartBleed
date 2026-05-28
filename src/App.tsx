@@ -980,7 +980,6 @@ const Team = () => {
       role: "Développement React", 
       email: "killian.gauchetpro@gmail.com", 
       discord: "Discord: soyeskiki", 
-      portfolio: "http://madebykiki.duckdns.org:18000/",
       task: "Architecture de l'application et animations.",
       img: killianImg // Utilisez 'killianImg' ici après avoir décommenté l'import en haut
     },
