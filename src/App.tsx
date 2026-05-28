@@ -33,7 +33,8 @@ import {
   Volume2,
   VolumeX,
   Search,
-  Database
+  Database,
+  PlayCircle
 } from 'lucide-react';
 import './App.css';
 
@@ -560,13 +561,19 @@ const Home = () => (
           Et si le petit cadenas vert de votre navigateur n'était qu'une illusion ? 
           Découvrez comment une simple erreur de code a mis à nu la vie privée de millions de personnes et fait vaciller les fondations d'Internet.
         </p>
-        <div className="hero-cta-wrapper">
+        <div className="hero-cta-wrapper" style={{ gap: '2rem' }}>
           <Link to="/comprendre" className="cta-investigate">
             <span className="cta-text">Commencez l'enquête</span>
             <div className="cta-icon-box">
               <ChevronRight size={24} />
             </div>
             <div className="cta-glare" />
+          </Link>
+          <Link to="/documentaire" className="cta-investigate" style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', animation: 'none' }}>
+            <span className="cta-text">Le Film</span>
+            <div className="cta-icon-box" style={{ background: 'rgba(255, 77, 77, 0.2)', color: '#ff4d4d' }}>
+              <PlayCircle size={24} />
+            </div>
           </Link>
         </div>
       </div>
@@ -772,6 +779,23 @@ const Conclusion = () => (
           </p>
         </div>
       </div>
+
+      <div className="analogy-card" style={{ borderLeft: '5px solid #ff4d4d', background: 'rgba(255, 77, 77, 0.05)' }}>
+        <div className="analogy-icon-container">
+          <ShieldCheck size={32} color="#ff4d4d" />
+        </div>
+        <div className="analogy-content">
+          <h3>Le Conseil de l'Expert</h3>
+          <p style={{ fontStyle: 'italic', color: '#eee', lineHeight: '1.7' }}>
+            « Vérifiez toujours systématiquement les entrées et les sorties de vos programmes. 
+            Ne faites jamais aveuglément confiance aux informations reçues. 
+            C'est comme une transaction : vérifiez l'objet, l'identité, et la conformité. 
+            Cette rigueur est le fondement de votre sécurité numérique. »
+          </p>
+          <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: '#888' }}>— Alexis HUYET, Architecte Cybersécurité Cloud</p>
+        </div>
+      </div>
+
       <blockquote>
         "Internet n'est pas une forteresse imprenable. C'est un écosystème fragile que nous apprenons enfin à protéger ensemble."
       </blockquote>
@@ -898,15 +922,17 @@ const Quiz = () => {
               <h3>HEARTBLEED : La Faille qui a fait saigner Internet</h3>
             </div>
             <div className="video-embed-container">
-              <iframe 
-                src="https://www.youtube.com/embed/SKwEkMrG-8A" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/0GXWonAeWV4"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
             </div>
-            <p className="video-footer-text">Vidéo recommandée pour comprendre les enjeux géopolitiques et techniques de la faille.</p>
+            <p className="video-footer-text">Vidéo exclusive de notre WebDoc pour comprendre les enjeux techniques de la faille.</p>
           </div>
 
           <div className="finish-actions">
@@ -962,6 +988,94 @@ const Quiz = () => {
     </PageTransition>
   );
 };
+
+// --- Documentary Component ---
+const Documentary = () => (
+  <PageTransition>
+    <div className="content-page">
+      <h2 className="section-title">Le Documentaire</h2>
+      <p className="page-intro">
+        Plongez au cœur de l'enquête avec notre documentaire exclusif. 
+        Un regard rétrospectif sur l'une des vulnérabilités les plus critiques du web, raconté par ceux qui ont vécu la crise de l'intérieur.
+      </p>
+
+      <div className="video-integration" style={{ maxWidth: '900px', margin: '3rem auto' }}>
+        <div className="video-header">
+          <div className="video-badge">EXCLUSIF</div>
+          <h3>HEARTBLEED : L'Enquête WebDoc</h3>
+        </div>
+        <div className="video-embed-container">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/0GXWonAeWV4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="video-footer-text" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span>Réalisé par Killian Le & l'équipe Heartbleed Doc</span>
+          <span style={{ opacity: 0.5 }}>Intervenant : Alexis HUYET</span>
+        </div>
+      </div>
+
+      <div className="speaker-section" style={{ maxWidth: '900px', margin: '4rem auto' }}>
+        <h3 className="section-subtitle" style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#fff' }}>L'Expert Invité</h3>
+        <div className="analogy-card">
+          <div className="analogy-icon-container">
+            <Users size={32} color="#ff4d4d" />
+          </div>
+          <div className="analogy-content">
+            <h3>Alexis HUYET</h3>
+            <p className="team-role" style={{ marginBottom: '0.5rem', color: '#ff4d4d', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.9rem' }}>Architecte Cybersécurité Cloud @ Veolia</p>
+            <p style={{ color: '#aaa', lineHeight: '1.7' }}>
+              Véritable « gardien de prison numérique », Alexis veille à la confidentialité et à la sécurité des données dans le cloud. 
+              Fort d'un parcours débuté au support informatique, il a traversé la crise Heartbleed en 2014 sur le terrain. 
+              Son expertise permet de comprendre comment une faille technique devient un défi organisationnel majeur.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="chapters-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '900px', margin: '4rem auto' }}>
+        <div className="stat-card" style={{ textAlign: 'left', padding: '1.5rem' }}>
+          <div style={{ color: '#ff4d4d', marginBottom: '1rem' }}><Activity size={24} /></div>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#fff' }}>Analyse de la faille</h4>
+          <p style={{ fontSize: '0.9rem', color: '#888', margin: 0 }}>Comprendre la fuite mémoire critique au sein d'OpenSSL et pourquoi elle était indétectable pendant deux ans.</p>
+        </div>
+        <div className="stat-card" style={{ textAlign: 'left', padding: '1.5rem' }}>
+          <div style={{ color: '#ff4d4d', marginBottom: '1rem' }}><Globe size={24} /></div>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#fff' }}>Réponse post-crise</h4>
+          <p style={{ fontSize: '0.9rem', color: '#888', margin: 0 }}>Comment le secteur s'est structuré pour financer les logiciels libres via l'Open Source Security Foundation.</p>
+        </div>
+        <div className="stat-card" style={{ textAlign: 'left', padding: '1.5rem' }}>
+          <div style={{ color: '#ff4d4d', marginBottom: '1rem' }}><Zap size={24} /></div>
+          <h4 style={{ margin: '0 0 0.5rem 0', color: '#fff' }}>IA & Futur</h4>
+          <p style={{ fontSize: '0.9rem', color: '#888', margin: 0 }}>L'intelligence artificielle comme outil à double tranchant pour la détection et l'automatisation des attaques.</p>
+        </div>
+      </div>
+
+      <div className="analogy-card" style={{ maxWidth: '900px', margin: '4rem auto' }}>
+        <div className="analogy-icon-container">
+          <Mail size={32} color="#ff4d4d" />
+        </div>
+        <div className="analogy-content">
+          <h3>La Métaphore du Bureau de Poste</h3>
+          <p style={{ color: '#aaa', lineHeight: '1.7' }}>
+            Pour vulgariser Heartbleed, Alexis HUYET utilise une image frappante : 
+            C'est comme se rendre à un bureau de poste pour demander 500 lettres recommandées et recevoir, 
+            sans vérification, votre lettre légitime ainsi que les 499 suivantes appartenant à d'autres clients. 
+            C'est ce "bavage" de mémoire qui a exposé les secrets du monde entier.
+          </p>
+        </div>
+      </div>
+
+      <NavigationFooter prevPath="/" nextPath="/comprendre" nextLabel="Commencer l'enquête" />
+    </div>
+  </PageTransition>
+);
 
 const Team = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
@@ -1115,6 +1229,7 @@ const Navbar = () => {
       label: 'Comprendre',
       links: [
         { path: '/', label: 'Home', icon: Globe },
+        { path: '/documentaire', label: 'Le Film', icon: PlayCircle },
         { path: '/comprendre', label: 'SSL', icon: BookOpen },
         { path: '/timeline', label: 'Timeline', icon: Calendar },
       ]
@@ -1257,6 +1372,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/WebDoc-HeartBleed" element={<Home />} />
+        <Route path="/documentaire" element={<Documentary />} />
         <Route path="/comprendre" element={<Context />} />
         <Route path="/la-faille" element={<TheFlaw />} />
         <Route path="/hacker-mode" element={<HackerPage />} />
