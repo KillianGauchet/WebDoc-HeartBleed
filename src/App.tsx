@@ -115,7 +115,7 @@ const HackerTerminal = () => {
       'Vérification du serveur en cours...', 
       'OpenSSL 1.0.1f trouvé (= le verrou de sécurité du serveur est une vieille version)', 
       'Extension Heartbeat : ACTIVÉE (= la porte est ouverte)', 
-      'FAILLE DÉTECTÉE : Le serveur est vulnérable !'
+      '[!] FAILLE DÉTECTÉE : Le serveur est vulnérable !'
     ],
     exploit: () => [
       'Envoi d\'un paquet "Battement de Cœur" piégé...',
@@ -980,7 +980,6 @@ const Team = () => {
       role: "Développement React", 
       email: "killian.gauchetpro@gmail.com", 
       discord: "Discord: soyeskiki", 
-      portfolio: "http://madebykiki.duckdns.org:18000/",
       task: "Architecture de l'application et animations.",
       img: killianImg // Utilisez 'killianImg' ici après avoir décommenté l'import en haut
     },
